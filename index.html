@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>CAW | Dados do Site</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+<div class="card">
+
+<header class="header">
+  <div class="logo">CAW</div>
+  <div>
+    <h1>Telecom e Energia</h1>
+    <span>Cadastro técnico do site</span>
+  </div>
+</header>
+
+<h2>Dados do Site</h2>
+
+<div class="grid-2">
+  <div class="campo"><label>Nome do Site *</label><input></div>
+  <div class="campo"><label>Sigla do Site *</label><input></div>
+</div>
+
+<div class="grid-3">
+  <div class="campo"><label>Cidade *</label><input></div>
+  <div class="campo">
+    <div>
+  <label>Estado (UF) *</label>
+  <select id="estado" required>
+    <option value="">Selecione</option>
+    <option value="AC">AC - Acre</option>
+    <option value="AL">AL - Alagoas</option>
+    <option value="AP">AP - Amapá</option>
+    <option value="AM">AM - Amazonas</option>
+    <option value="BA">BA - Bahia</option>
+    <option value="CE">CE - Ceará</option>
+    <option value="DF">DF - Distrito Federal</option>
+    <option value="ES">ES - Espírito Santo</option>
+    <option value="GO">GO - Goiás</option>
+    <option value="MA">MA - Maranhão</option>
+    <option value="MT">MT - Mato Grosso</option>
+    <option value="MS">MS - Mato Grosso do Sul</option>
+    <option value="MG">MG - Minas Gerais</option>
+    <option value="PA">PA - Pará</option>
+    <option value="PB">PB - Paraíba</option>
+    <option value="PR">PR - Paraná</option>
+    <option value="PE">PE - Pernambuco</option>
+    <option value="PI">PI - Piauí</option>
+    <option value="RJ">RJ - Rio de Janeiro</option>
+    <option value="RN">RN - Rio Grande do Norte</option>
+    <option value="RS">RS - Rio Grande do Sul</option>
+    <option value="RO">RO - Rondônia</option>
+    <option value="RR">RR - Roraima</option>
+    <option value="SC">SC - Santa Catarina</option>
+    <option value="SP">SP - São Paulo</option>
+    <option value="SE">SE - Sergipe</option>
+    <option value="TO">TO - Tocantins</option>
+  </select>
+
+  <script>
+  const estadoSelect = document.getElementById('estado');
+
+  // Carrega estado salvo (se voltar para a etapa 1)
+  const estadoSalvo = localStorage.getItem('estado');
+  if (estadoSalvo) {
+    estadoSelect.value = estadoSalvo;
+  }
+
+  // Salva estado automaticamente ao mudar
+  estadoSelect.addEventListener('change', function () {
+    localStorage.setItem('estado', this.value);
+  });
+</script>
+</div>
+
+  <div class="campo"><label>CEP *</label><input></div>
+</div>
+
+<div class="grid-2">
+  <div class="campo"><label>Endereço *</label><input></div>
+  <div class="campo"><label>Bairro *</label><input></div>
+</div>
+
+<div class="grid-2">
+  <div class="campo"><label>Latitude *</label><input></div>
+  <div class="campo"><label>Longitude *</label><input></div>
+</div>
+
+<div class="grid-full">
+  <div class="campo"><label>Gestor do Cliente *</label><input></div>
+</div>
+
+<div class="grid-full">
+  <div class="campo">
+    <label>Escopo Resumido *</label>
+    <textarea rows="4"></textarea>
+  </div>
+</div>
+
+<div class="botoes">
+  <span></span>
+  <a href="etapa2.html" class="btn btn-primary" onclick="salvarEtapa1(event)">
+    Próximo
+  </a>
+</div>
+
+
+</div>
+</div>
+<script>
+function salvarEtapa1() {
+  const dados = {
+    nome_site: document.getElementById('nome_site').value,
+    cidade: document.getElementById('cidade').value,
+    estado: document.getElementById('estado').value,
+    sigla_site: document.getElementById('sigla_site').value,
+    endereco: document.getElementById('endereco').value,
+    bairro: document.getElementById('bairro').value,
+    cep: document.getElementById('cep').value,
+    latitude: document.getElementById('latitude').value,
+    longitude: document.getElementById('longitude').value,
+    gestor_cliente: document.getElementById('gestor_cliente').value
+  };
+
+  localStorage.setItem('etapa1', JSON.stringify(dados));
+
+  window.location.href = "etapa2.html";
+}
+</script>
+
+</body>
+</html>
+
+
+
+ 

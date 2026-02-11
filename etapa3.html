@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>CAW Telecom | Cadastro Técnico do Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: radial-gradient(circle at top, #1e2d45, #0b1628 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            background: rgba(15, 25, 45, 0.85);
+            border-radius: 16px;
+            padding: 40px 50px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        /* HEADER */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .logo {
+            background: #ff9f1c;
+            color: #000;
+            font-weight: bold;
+            padding: 10px 14px;
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .header span {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        /* SECTIONS */
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        label {
+            font-size: 13px;
+            opacity: 0.9;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            outline: none;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* FOOTER */
+        .footer {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 30px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #ff9f1c, #ff7b00);
+            border: none;
+            color: #000;
+            font-weight: bold;
+            padding: 14px 40px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 900px) {
+            .grid, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo">CAW</div>
+        <div>
+            <h1>Telecom e Energia</h1>
+            <span>Cadastro técnico do site</span>
+        </div>
+    </div>
+     <div class="container">
+    <h1>ETAPA 3</h1>
+    <h2>ADICIONAIS</h2>
+<body>
+
+
+
+    <!-- BLOCO: PROJETO -->
+    <h3>Projeto</h3>
+    <div class="grid-3">
+
+      <div>
+        <label>Terceirização do Projeto</label>
+        <select id="terceirizacao">
+          <option value="">Selecione</option>
+          <option>SIM</option>
+          <option>NÃO</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Pré-Montagem (kg)</label>
+        <input type="number" id="pre_montagem" min="0">
+      </div>
+
+      <div>
+        <label>Altura</label>
+        <input type="number" id="altura" min="0">
+      </div>
+
+    </div>
+
+    <!-- BLOCO: PINTURA -->
+    <h3>Pintura</h3>
+    <div class="grid-3">
+
+      <div>
+        <label>Tipo de Pintura</label>
+        <select id="pintura">
+          <option value="">Selecione</option>
+          <option>Sem Pintura</option>
+          <option>Comar</option>
+          <option>Protetiva CAW</option>
+          <option>Protetiva ATC</option>
+          <option>Pintura em Campo</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- BLOCO: ITENS TÉCNICOS -->
+    <h3>Itens Técnicos</h3>
+    <div class="grid-3">
+
+      <div>
+        <label>Rabichos</label>
+        <select id="rabichos">
+          <option value="">SIM</option>
+          <option>NAO</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Balizamento</label>
+        <select id="balizamento">
+          <option value="">SIM</option>
+          <option>NAO</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Malha Aterramento (pé da torre)</label>
+        <input type="number" id="malha_aterramento" min="0">
+      </div>
+
+      <div>
+        <label>FCI (quantidade)</label>
+        <input type="number" id="fci" min="0">
+      </div>
+
+      <div>
+        <label>Descida PR</label>
+        <select id="descida_pr">
+          <option value="">Selecione</option>
+          <option>SIM</option>
+          <option>NÃO</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- BLOCO: MONTAGEM -->
+    <h3>Montagem</h3>
+    <div class="grid-3">
+
+      <div>
+        <label>Tipo de Montagem</label>
+        <select id="montagem">
+          <option value="">Selecione</option>
+          <option>Sem</option>
+          <option>Vermelha</option>
+          <option>Amarela</option>
+          <option>Verde</option>
+          <option>Dourada</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- BLOCO: SEGURANÇA -->
+    <h3>Segurança / Estrutura</h3>
+    <div class="grid-3">
+
+      <div>
+        <label>Para-raios Franklin</label>
+        <select id="pararaios">
+          <option value="">Selecione</option>
+          <option>SIM</option>
+          <option>NÃO</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Supervisor em Obra</label>
+        <select id="supervisor">
+          <option value="">Selecione</option>
+          <option>SIM</option>
+          <option>NÃO</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Téc. de Segurança em Obra</label>
+        <select id="tec_seg">
+          <option value="">Selecione</option>
+          <option>SIM</option>
+          <option>NÃO</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Canteiro</label>
+        <select id="canteiro">
+          <option value="">Selecione</option>
+          <option>SIM</option>
+          <option>NÃO</option>
+        </select>
+      </div>
+
+    </div>
+
+   <div class="buttons">
+  <a href="etapa4.html" class="btn btn-primary" onclick="salvarEtapa3()">
+    Próximo
+  </a>
+</div>
+
+  </form>
+</div>
+
+<script>
+const campos = [
+  'terceirizacao','pre_montagem','altura','pintura','rabichos',
+  'balizamento','malha_aterramento','fci','descida_pr',
+  'montagem','pararaios','supervisor','tec_seg','canteiro'
+];
+
+campos.forEach(campo => {
+  const valor = localStorage.getItem(campo);
+  if (valor !== null) document.getElementById(campo).value = valor;
+});
+
+document.getElementById('formEtapa3').addEventListener('submit', e => {
+  e.preventDefault();
+  campos.forEach(campo => {
+    localStorage.setItem(campo, document.getElementById(campo).value);
+  });
+  window.location.href = 'etapa4.html';
+});
+</script>
+<script>
+function salvarEtapa3(event) {
+  event.preventDefault();
+
+  const dados = {
+    pre_montagem_kg: document.getElementById('pre_montagem_kg').value,
+    altura: document.getElementById('altura').value
+  };
+
+  localStorage.setItem('etapa3', JSON.stringify(dados));
+
+  window.location.href = "etapa4.html";
+}
+</script>
+
+</body>
+</html>
