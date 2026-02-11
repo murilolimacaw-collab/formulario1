@@ -252,23 +252,23 @@ TO:{icms:6,difal:12,pis:1.65,cofins:7.6,iss:5,material:18,servico:82}
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    const etapa1 = JSON.parse(localStorage.getItem("etapa1") || "{}");
-    const uf = etapa1.estado;
+    const uf = localStorage.getItem("estado");
 
     if(uf && impostosPorEstado[uf]){
 
         const dados = impostosPorEstado[uf];
 
+        document.getElementById("estado").value = uf;
         document.getElementById("icms").value = dados.icms;
         document.getElementById("difal").value = dados.difal;
         document.getElementById("pis").value = dados.pis;
         document.getElementById("cofins").value = dados.cofins;
         document.getElementById("iss").value = dados.iss;
-        document.getElementById("percent_material").value = dados.material;
-        document.getElementById("percent_servico").value = dados.servico;
+        document.getElementById("material").value = dados.material;
+        document.getElementById("servico").value = dados.servico;
     }
-});
 
+});
 
 /* ===============================
    SALVAR ETAPA 4
@@ -282,8 +282,8 @@ function salvarEtapa4(){
         pis: document.getElementById("pis").value,
         cofins: document.getElementById("cofins").value,
         iss: document.getElementById("iss").value,
-        percent_material: document.getElementById("percent_material").value,
-        percent_servico: document.getElementById("percent_servico").value
+        percent_material: document.getElementById("material").value,
+        percent_servico: document.getElementById("servico").value
     };
 
     localStorage.setItem("etapa4", JSON.stringify(dados));
@@ -310,7 +310,7 @@ function finalizar(){
 
     const dados = {...etapa1, ...etapa2, ...etapa3, ...etapa4};
 
-    fetch("https://script.google.com/macros/s/AKfycbzt8FCDz4MUtbcA9y3XKbpfE8MfPVgjKywvyscKTqaeMO8NIVYac6tmedqNO5RlClUj/exec", {
+    fetch("https://https://script.google.com/macros/s/AKfycbzt8FCDz4MUtbcA9y3XKbpfE8MfPVgjKywvyscKTqaeMO8NIVYac6tmedqNO5RlClUj/exec.google.com/macros/s/AKfycbzt8FCDz4MUtbcA9y3XKbpfE8MfPVgjKywvyscKTqaeMO8NIVYac6tmedqNO5RlClUj/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dados)
