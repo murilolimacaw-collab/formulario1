@@ -310,34 +310,35 @@ function finalizar(){
 
     const dados = {...etapa1, ...etapa2, ...etapa3, ...etapa4};
 
-    fetch("https://https://script.google.com/macros/s/AKfycbzt8FCDz4MUtbcA9y3XKbpfE8MfPVgjKywvyscKTqaeMO8NIVYac6tmedqNO5RlClUj/exec.google.com/macros/s/AKfycbzt8FCDz4MUtbcA9y3XKbpfE8MfPVgjKywvyscKTqaeMO8NIVYac6tmedqNO5RlClUj/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(dados)
-    })
-    .then(response => response.text())
-    .then(resposta => {
+    fetch("https://script.google.com/macros/s/AKfycbzZzzxOsftrIHwOVyPSSrxiJmVhr2WTt9Fem_zOmtvkxqG6MDsQYA7deWNzI1p8y-q2/exec", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(dados)
+})
+.then(response => response.text())
+.then(resposta => {
 
-        console.log("Resposta do servidor:", resposta);
+    console.log("Resposta do servidor:", resposta);
 
-        mensagem.style.color = "green";
-        mensagem.innerHTML = "✅ Cadastro enviado com sucesso!";
+    mensagem.style.color = "green";
+    mensagem.innerHTML = "✅ Cadastro enviado com sucesso!";
 
-        localStorage.clear();
+    localStorage.clear();
 
-        setTimeout(()=>{
-            window.location.href = "index.html";
-        },2000);
+    setTimeout(()=>{
+        window.location.href = "index.html";
+    },2000);
 
-    })
-    .catch(error=>{
+})
+.catch(error=>{
 
-        console.error("Erro:", error);
+    console.error("Erro:", error);
 
-        mensagem.style.color = "red";
-        mensagem.innerHTML = "❌ Erro ao enviar os dados.";
+    mensagem.style.color = "red";
+    mensagem.innerHTML = "❌ Erro ao enviar os dados.";
 
-    });
+});
+   
 }
 
 </script>
